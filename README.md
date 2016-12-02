@@ -14,7 +14,7 @@
 
 在需要添加统计的页面引入如下JS文件，（支持https）：http://s.kcimg.cn/main/t.analysis-1.1.js
 
-==请注意，如果你的页面启用了https，务必引入https://s.kcimg.cn/main/t.analysis-1.1.js ，否则将无法在iOS9.0以上系统中成功使用新版统计JS==
+==请注意，如果你的页面启用了https，务必引入https://s.kcimg.cn/main/t.analysis-1.1.js ，否则将成功使用新版统计JS==
 
 ### 步骤二：调用统计函数
 
