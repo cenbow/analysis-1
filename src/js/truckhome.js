@@ -35,7 +35,7 @@ function Truckhome_pv(options){
 // 停留时长
 function Truckhome_duration(){
     var start,end,uuid = document.cookie.match(/udstatistics=([^;$]+)/),r = '';
-    window.addEventListener('load',function(e){
+    window.addEventListener('DOMContentLoaded',function(e){
         start = +new Date();
     });
     if(uuid && uuid[1]){
