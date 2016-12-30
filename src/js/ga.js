@@ -18,7 +18,11 @@ function _truckhomeGa(n){
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-64002767-'+ n , 'auto');
-    ga('set', 'dimension1', _r);
+	ga(function(tracker) {
+		tracker.set('dimension16', tracker.get('clientId'))
+	});
+	ga('set', 'dimension1', _r);
+	window.GA_callback && window.GA_callback();
     ga('send', 'pageview', {
         'dimension1': _r,
         'dimension2':ua
