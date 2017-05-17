@@ -2,6 +2,7 @@
 var STATS = 'https://stats.360che.com/'; 
 var REFERRER = document.referrer || 'wulaiyuan';    // 来源
 var CURRENT = location.href; 
+var W = window;
 
 // PV统计
 function Truckhome_pv(options){
@@ -73,3 +74,8 @@ function Truckhome_shares(options){
     }
     img.src = STATS + 'shares.gif?page=' + CURRENT + s + '&ts=' + ts;
 }
+
+W.Truckhome_pv = Truckhome_pv;
+W.Truckhome_duration = Truckhome_duration;
+W.Truckhome_events = Truckhome_events;
+W.Truckhome_shares = Truckhome_shares;
