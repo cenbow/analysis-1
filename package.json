@@ -5,14 +5,16 @@
   "main": "t.analysis-1.1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p"
+    "build": "rimraf ./dist/* && webpack -p"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pumpe/analysis.git"
   },
   "keywords": [
-    "Truck Home","Google Analysis","Baidu"
+    "Truck Home",
+    "Google Analysis",
+    "Baidu"
   ],
   "author": "ZP",
   "license": "MIT",
@@ -21,6 +23,7 @@
   },
   "homepage": "https://github.com/Pumpe/analysis#readme",
   "devDependencies": {
+    "rimraf": "^2.6.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1"
   }
