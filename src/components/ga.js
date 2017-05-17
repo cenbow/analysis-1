@@ -1,5 +1,12 @@
 /* Google */
-var ua = navigator.userAgent,n = 3;
+var UA = navigator.userAgent,
+    IPHONE = /iPhone|iPad|iPod/i.test(UA),
+    ANDROID = /android/i.test(UA),
+    APP = /360che/i.test(UA),
+    WECHAT = /MicroMessenger/i.test(UA),
+    QQ = /qq\/\d+/i.test(UA),
+    SPIDER = /spider|googlebot|user-agent|networkbench/i.test(UA);
+var n = 3;
 var device = {
     "m":2,
     "pc":3,
@@ -28,24 +35,16 @@ function _truckhomeGa(n){
         'dimension2':ua
     });
 };
-if(ua.match(/iphone/gi) || ua.match(/android/gi)){
-    if(ua.match(/360che/gi)){
-        if(ua.match(/iphone/gi)){
-            n = device['iphone']
-        }else if(ua.match(/android/gi)){
-            n = device['android']
+if(!SPIDER){
+    if(IPHONE || ANDROID){
+        if(APP){    // 客户端
+            n = IPHONE ? device['iphone'] : device['android']
+        }else{      // 微信，QQ，手机站
+            n = WECHAT ? device['wechat'] : (QQ ? device['qq'] : device['m'])
         }
+        _truckhomeGa(n)
     }else{
-        if(/MicroMessenger/i.test(ua)){
-            n = device['wechat']
-        }else if(/qq\/\d+/i.test(ua)){
-            n = device['qq']
-        }else{
-            n = device['m'];
-        }
-    }
-    _truckhomeGa(n);
-}else{
-    n = device['pc'];
-    filterAnalyisis.init(_truckhomeGa,n);
-};
+        n = device['pc'];
+        filterAnalyisis.init(_truckhomeGa,n);
+    };
+}

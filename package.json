@@ -1,25 +1,27 @@
 {
   "name": "analysis",
   "version": "1.0.0",
-  "description": "大��卡车之家统计脚本",
-  "main": "t.analysis-1.1�.js",
-  "directories": {
-    "example": "example"
-  },
+  "description": "卡车之家统计脚本",
+  "main": "t.analysis-1.1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pumpe/analysis.git"
   },
   "keywords": [
-    "Analysis��"
+    "Truck Home","Google Analysis","Baidu"
   ],
   "author": "ZP",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Pumpe/analysis/issues"
   },
-  "homepage": "https://github.com/Pumpe/analysis#readme"
+  "homepage": "https://github.com/Pumpe/analysis#readme",
+  "devDependencies": {
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.1"
+  }
 }

@@ -1,0 +1,5 @@
+import compatible from './components/compatible'
+import filter from './components/filter'
+import baidu from './components/baidu'
+import ga from './components/ga'
+import truckhome from './components/truckhome'
